@@ -11,6 +11,11 @@ ShirtOrder.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        // Use 'UUID' to generate unique "order_number" identifier
+        order_number: {
+            type: DataTypes.UUID,
+            defaultValue: UUIDV4,
+        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
