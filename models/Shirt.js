@@ -26,10 +26,24 @@ Shirt.init(
           isDecimal: true
         }
     },
-    user_id: {
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
+    shirtOrder_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'shirtOrder',
+        key: 'id',
+      },
+    },
+    cohort_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'cohort',
         key: 'id',
       },
     },
