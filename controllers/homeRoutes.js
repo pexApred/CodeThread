@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Shirt, ShirtOrder } = require('../models');
 const withAuth = require('../utils/auth');
-// (Temporary code we used for testing to open a 'homepage' in broswer)
+// (Temporary code we used for testing to open a 'homepage' in browser)
 router.get('/', async (req, res) => {
   try {
     res.render('homepage');
