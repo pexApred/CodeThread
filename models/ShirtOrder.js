@@ -29,6 +29,48 @@ ShirtOrder.init(
               key: 'id',
             },
         },
+        shirt_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'shirt',
+              key: 'id',
+            },
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
+            },
+        },
+        color: {
+            type: DataTypes.STRING,
+            allowNull: false,
+          },
+          size: {
+              type: DataTypes.STRING,
+              allowNull: false,
+          },
+          city: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        address: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        state: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        zip: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        apt: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
     },
     {
         sequelize,
@@ -38,5 +80,6 @@ ShirtOrder.init(
         modelName: 'shirtOrder',
     }
 );
+//Include shirt ID
 
 module.exports = ShirtOrder;

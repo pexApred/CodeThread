@@ -11,14 +11,6 @@ Shirt.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    color: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    size: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     price: {
         type: DataTypes.DECIMAL,
         allowNull: false,
@@ -33,19 +25,17 @@ Shirt.init(
     //     key: 'id',
     //   },
     // },
-    shirtOrder_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'shirtOrder',
-        key: 'id',
-      },
-    },
-    cohort_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'cohort',
-        key: 'id',
-      },
+
+    // shirtOrder_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'shirtOrder',
+    //     key: 'id',
+    //   },
+    // },
+    cohort_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
