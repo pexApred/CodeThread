@@ -4,7 +4,7 @@ const Shirt = require('./Shirt');
 const ShirtOrder = require('./ShirtOrder');
 
 // User can have many ShirtOrders
-User.hasOne(ShirtOrder, {
+User.hasMany(ShirtOrder, {
     foreignKey: 'user_id',
 })
 
@@ -14,11 +14,11 @@ ShirtOrder.belongsTo(User, {
 })
 
 // A Shirt belongs to one ShirtOrder
-ShirtOrder.belongsTo(Shirt, {
+Shirt.belongsTo(ShirtOrder, {
     foreignKey: 'shirt_id',
 })
 
-Shirt.hasOne(ShirtOrder, {
+ShirtOrder.hasOne(Shirt, {
     foreignKey: 'shirt_id',
 })
 
