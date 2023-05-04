@@ -14,8 +14,8 @@ ShirtOrder.belongsTo(User, {
 })
 
 // A Shirt belongs to one ShirtOrder
-Shirt.belongsTo(ShirtOrder, {
-    foreignKey: 'shirtOrder_id',
+ShirtOrder.belongsTo(Shirt, {
+    foreignKey: 'shirt_id',
 })
 
 Shirt.hasOne(ShirtOrder, {
