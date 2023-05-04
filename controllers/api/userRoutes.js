@@ -60,4 +60,26 @@ router.post("/logout", (req, res) => {
   }
 });
 
+// Create a new user based on the data we receive from the signup form on the login page. 
+router.post("/signup", async (req, res) => {
+  try {
+    const addUser = new User();
+    addUser.username = req.body.username;
+    addUser.email = req.body.email;
+    addUser.password = req.body.password;
+
+    const userData = await addUser.save();
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+    console.log(err);
+  }
+});
+
 module.exports = router;
