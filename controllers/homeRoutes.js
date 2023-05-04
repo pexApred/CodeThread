@@ -37,7 +37,67 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Routes the user to a page specific to a single shirt. 
+router.get('/shirt/:id', async (req, res) => {
+  try {
+    // Get specific shirt data
+    const shirtData = await Shirt.findByPk(req.params.id);
 
+    const shirt = shirtData.get({ plain: true });
+
+    console.log(shirt)
+
+    res.render('shirt', {
+      ...shirt,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log("Error",err)
+    res.status(500).json(err);
+  }
+});
+
+// Routes the user to a page specific to a single shirt order. Have to be logged in to access route. 
+router.get('/orders/:id', withAuth, async (req, res) => {
+  try {
+    // Get specific order data
+    const shirtOrderData = await ShirtOrder.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Shirt }]
+  });
+
+    const shirtOrder = shirtOrderData.get({ plain: true });
+
+    console.log(shirtOrder)
+
+    res.render('shirtorder', {
+      ...shirtOrder,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log("Error",err)
+    res.status(500).json(err);
+  }
+});
+
+// Routes user to their profile page where they can view their orders and information
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: ShirtOrder }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // TODO: Use express-session to store session data in a cookie
 
