@@ -1,5 +1,13 @@
-<div class="row mb-4 project">
-    <div class="col-md-5">
-        <p> Test Code Thread </p>
+<div class="col-mb-4 home">
+    <div class="col-md-5 header">
+        <h1>Shop</h1>
     </div>
+     {{#each shirts as |shirt| }}
+    <div class="cohort-shirt col-md-5">
+        <h2 class="shirt-title">{{cohort.name}}</h2>
+        <a href={{shirt.handlebars}} img={{shirt.img}} alt="Graphic of "{{cohort.name}}>
+    </div>
+    {{#each}}
 </div>
+
+<script src="/js/index.js"></script>

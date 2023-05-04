@@ -1,0 +1,37 @@
+{{!-- if empty display "Cart Empty" --}}
+
+
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+
+  
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
+
+
+
+
+
+<div class="col-mb-4 home">
+    <div class="col-md-5 header">
+        <h1>My Cart</h1>
+    </div>
+    {{#each shirts as |shirt| }}
+    <div class="cohort-shirt col-md-5">
+        <h2 class="shirt-title">{{cohort.name}}</h2>
+        <a href={{shirt.handlebars}} img={{cohort.shirt}} alt="Graphic of "{{cohort.name}}></a>
+        <p class="shirt-size">Size: {{shirt.size}}</p>
+        <br>
+        <p class="shirt-color">Color: {{shirt.color}}</p>
+        <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{shirt.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/js/index.js"></script>
