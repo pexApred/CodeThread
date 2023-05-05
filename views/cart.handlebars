@@ -1,25 +1,10 @@
 {{!-- if empty display "Cart Empty" --}}
-
+<h1>My Cart</h1>
 
   {{#if projects.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-  
-  </div>
-  {{/if}}
-</div>
-
-<script src="./js/profile.js"></script>
-
-
-
-
-
-<div class="col-mb-4 home">
-    <div class="col-md-5 header">
-        <h1>My Cart</h1>
-    </div>
+    <h3>Items in your cart:</h3>
+    <div class="col-mb-4 home">
     {{#each shirts as |shirt| }}
     <div class="cohort-shirt col-md-5">
         <h2 class="shirt-title">{{cohort.name}}</h2>
@@ -33,5 +18,8 @@
     </div>
     {{/each}}
 </div>
+  </div>
+  {{/if}}
+</div>
 
-<script src="/js/index.js"></script>
+<script src="./js/cart.js"></script>
