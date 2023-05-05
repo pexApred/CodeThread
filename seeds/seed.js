@@ -1,22 +1,29 @@
-const { faker } = require('@faker-js/faker');
+const sequelize = require('../config/connection');
+const { User, Shirt, ShirtOrder } = require('../models');
 
-function generateUsers() {
-    let users = [];
-    for (let id = 1; id <= 10; id++) {
-        const randomName = faker.name.fullName();
-        const email = faker.internet.email(randomName);
-        const randomPassword = faker.internet.password();
-        users.push({
-            name: randomName,
-            email: email,
-            password: randomPassword,
-        });
-        // console.log(`Email: ${email}, Name: ${randomName}, Password: ${randomPassword}`);
-    }
-    return { users: users };
-}
-module.exports = generateUsers;
+const userData = require('./userData.json');
+const orderData = require('./orderData.json');
+const shirtData = require('./shirtData.json');
 
-let userData = JSON.stringify(generateUsers());
-console.log(userData);
+const seedDatabase = async () => {
+    await sequelize.sync({ force: true });
+    console.log('\n----- DATABASE SYNCED -----\n');
 
+    await User.bulkCreate(userData, {
+        individualHooks: true,
+        returning: true,
+    });
+    console.log('\n----- USERS SEEDED -----\n');
+
+    await Shirt.bulkCreate(shirtData);
+
+    console.log('\n----- SHIRTS SEEDED -----\n');
+  
+    await ShirtOrder.bulkCreate(orderData);
+
+    console.log('\n----- SHIRT ORDERS SEEDED -----\n');
+
+    process.exit(0);
+  };
+  
+  seedDatabase();

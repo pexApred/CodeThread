@@ -1,6 +1,6 @@
 // TODO: Import dependencies, including models and withAuth
 const router = require('express').Router();
-const { Shirt, User } = require('../../models');
+const { Shirt, User, ShirtOrder } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // (Temporary code we used for testing to open a 'homepage' in broswer)
@@ -45,7 +45,7 @@ router.put("/:id", withAuth, async (req, res) => {
 });
 
 
-// route for creating a new shirt
+// route for deleting a shirt
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const deleteShirt = await Shirt.destroy({
