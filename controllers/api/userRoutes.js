@@ -1,6 +1,6 @@
 // TODO: Import dependencies, including models
 const router = require("express").Router();
-const { Shirt, User } = require('../../models');
+const { Shirt, User, ShirtOrder } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // TODO: Create new user (POST method with 'create') --> "sign-up"
