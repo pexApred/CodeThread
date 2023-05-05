@@ -18,21 +18,6 @@ Shirt.init(
           isDecimal: true
         }
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   },
-    // },
-
-    // shirtOrder_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'shirtOrder',
-    //     key: 'id',
-    //   },
-    // },
     cohort_name: {
       type: DataTypes.STRING,
       allowNull: false,

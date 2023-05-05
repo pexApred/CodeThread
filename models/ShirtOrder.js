@@ -22,14 +22,6 @@ ShirtOrder.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
           },
-        //   this following code looks like it is duplicated! See the user_id below the shirt_id!
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //       model: 'user',
-        //       key: 'id',
-        //     },
-        // },
         shirt_id: {
             type: DataTypes.INTEGER,
             references: {
