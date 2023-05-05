@@ -14,18 +14,4 @@
     <p>Email: {{user.email}}</p>
   </div>
 </div>
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>My Orders</h3>
-    {{#each orders as |order| }}
-    <div class="cohort-shirt col-md-5">
-      <p>First: {{user.first}}</p>
-        <p class="shirt-title">Cohort: {{cohort.name}}</p>
-          <a href={{shirt.handlebars}} img={{cohort.shirt}} alt="Graphic of "{{cohort.name}}></a>
-        <p class="shirt-size">Size: {{shirt.size}}</p>
-        <br>
-        <p class="shirt-color">Color: {{shirt.color}}</p>
-    </div>
-    {{/each}}
-  </div>
-</div>
+

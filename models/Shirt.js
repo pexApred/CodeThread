@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const exphbs = require('express-handlebars');
 
 class Shirt extends Model {}
 
@@ -31,10 +32,5 @@ Shirt.init(
     modelName: 'shirt',
   }
 );
-
-Handlebars.registerHelper('checked', function(value, test) {
-  if (value == undefined) return '';
-  return value==test ? 'checked' : '';
-});
 
 module.exports = Shirt;
