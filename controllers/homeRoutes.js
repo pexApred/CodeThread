@@ -4,7 +4,15 @@ const withAuth = require('../utils/auth');
 // (Temporary code we used for testing to open a 'homepage' in browser)
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage');
+    const shirtData = await Shirt.findAll({
+      attributes: ['cohort_name', 'price'],
+    });
+    console.log(shirtData);
+    const shirts = shirtData.map((shirt) => shirt.get({ plain: true })); 
+    res.render('homepage', {
+      shirts,
+    });
+    console.log(shirts);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -12,6 +20,8 @@ router.get('/', async (req, res) => {
 
 router.get('/', withAuth, async (req, res) => {
   try {
+    
+    
     // const userData = await User.findAll({
     //   attributes: { exclude: ['password'] },
     //   order: [['name', 'ASC']],
@@ -19,7 +29,7 @@ router.get('/', withAuth, async (req, res) => {
 
     // const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('homepage', {
+    res.render('profile', {
       users,
       logged_in: req.session.logged_in,
     });
