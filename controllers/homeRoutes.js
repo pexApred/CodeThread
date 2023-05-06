@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const shirtData = await Shirt.findAll({
-      attributes: ['cohort_name', 'price'],
+      attributes: ['id', 'cohort_name', 'price'],
     });
     console.log(shirtData);
     const shirts = shirtData.map((shirt) => shirt.get({ plain: true })); 
@@ -55,9 +55,9 @@ router.get('/shirt/:id', async (req, res) => {
 
     const shirt = shirtData.get({ plain: true });
 
-    console.log(shirt)
+    console.log(shirt.id)
 
-    res.render('shirt', {
+    res.render('shirtform', {
       ...shirt,
       logged_in: req.session.logged_in
     });

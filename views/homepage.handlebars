@@ -7,8 +7,11 @@
         <h2 class="shirt-title">{{shirt.cohort_name}}</h2>
     
         <h2 class="shirt-price">{{shirt.price}}</h2>
-        <a href="/shirt/{{shirt.id}}"> 
-            <img={{shirt.img}} alt="Graphic of "{{shirt.cohort.name}}></a>
+        <a href="/shirt/{{id}}"> 
+            <img= src="{{shirt.img}}" alt="Graphic of {{shirt.cohort_name}}"></a>
+    </div>
+    <div class="form-group">
+        <a href="/shirt/{{id}}" class="btn btn-primary" type="submit">View Shirt</a>
     </div>
     {{/each}}
 </div>
