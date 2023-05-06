@@ -13,7 +13,8 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="./main.handlebars">CodeThread</a>
+        {{!-- The CodeThread homepage is demarcated by the '/' route.  --}}
+  <a class="navbar-brand" href="/">CodeThread</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,13 +22,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="./homepage.handlebars">Shop<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Shop<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./profile.handlebars">Profile</a>
+        <a class="nav-link" href="/profile">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="./shirtorder.handlebars">Orders</a>
+        <a class="nav-link disabled" href="/shirtorder">Orders</a>
       </li>
       <li>
         <div>
@@ -45,7 +46,8 @@
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
-      {{{ home }}}
+      {{!-- The syntax per handlebars for this part is {{{ body }}} --}}
+      {{{ body }}}
     </main>
   </div>
   <!-- Render script for logged in users only -->
@@ -53,7 +55,8 @@
   <script src="/js/logout.js"></script>
   {{/if}}
   <footer>
-      <a class="footer-brand" href="./main.handlebars">CodeThread</a>
+    {{!-- The footer returns to the CodeThread homepage which is demarcated via the '/' --}}
+      <a class="footer-brand" href="/">CodeThread</a>
     </footer>
 </body>
 
