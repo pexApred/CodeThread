@@ -2,6 +2,37 @@ const router = require('express').Router();
 const { Shirt, User, ShirtOrder } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// router.get('/', withAuth, async (req, res) => {
+//   try {
+//     const cartData = await ShirtOrder.findAll({
+//       include: [
+//         {
+//           model: Shirt,
+//           attributes: ['id', 'price', 'cohort_name']
+//         },
+//         {
+//           model: User,
+//           attributes: ['id', 'name', 'email',]
+//         }
+//       ]
+//     });
+    
+//     // const userData = await User.findAll({
+//     //   attributes: { exclude: ['password'] },
+//     //   order: [['name', 'ASC']],
+//     // });
+
+//     // const users = userData.map((project) => project.get({ plain: true }));
+
+//     res.render('shirtOrder', {
+//       users,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 // route for creating a new shirt
 router.post('/', withAuth, async (req, res) => {
     try {

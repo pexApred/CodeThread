@@ -1,14 +1,14 @@
 [
     {
-      "price": "19.99",
-      "cohort_name": "Spring 2023"
+        "price": "19.99",
+        "cohort_name": "Full-Stack Coding Bootcamp Spring 2023"
     },
     {
         "price": "24.99",
-        "cohort_name": "Summer 2023"
+        "cohort_name": "Full-Stack Coding Bootcamp Summer 2023"
     },
     {
         "price": "29.99",
-        "cohort_name": "Fall 2023"
+        "cohort_name": "Full-Stack Coding Bootcamp Fall 2023"
     }
 ]
