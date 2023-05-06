@@ -7,11 +7,40 @@
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>My Profile</h3>
-    <p>First: {{user.first}}</p>
+    <p>Name: {{name}}</p>
     <br>
-    <p>Last: {{user.last}}</p>
-    <br>
-    <p>Email: {{user.email}}</p>
+    <p>Email: {{email}}</p>
   </div>
 </div>
+
+{{!-- The if handlebars helper is used if the user has made a previous post --}}
+  {{#if shirtOrders.length}}
+  <div class="col-md-6 post-list">
+    <h3>Shirt Orders:</h3>
+{{!-- The each handlebars helper is used to iterate over a list of all shirt orders. --}}
+    {{#each shirtOrders as |shirtOrder|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <ul>
+        <li><p>Order Number: {{shirtOrder.order_number}}</p></li>
+        <li><p>Date Created: {{shirtOrder.date_created}}</p></li>
+        <li><p>Color: {{shirtOrder.color}}</p></li>
+        <li><p>Size: {{shirtOrder.size}}</p></li>
+        <li><p>Address: {{shirtOrder.address}}</p></li>
+        <li><p>City: {{shirtOrder.city}}</p></li>
+        <li><p>State: {{shirtOrder.state}}</p></li>
+        <li><p>Zip: {{shirtOrder.zip}}</p></li>
+        <li><p>Apt: {{shirtOrder.apt}}</p></li></ul>
+    <a href="/post/{{shirtOrder.id}}">{{shirtOrder.title}}</a></h4>
+      </div>
+      <div class="col-md-4e">
+        <a href="/updatepost/{{shirtOrder.id}}" class="btn btn-sm btn-primary">UPDATE</a>
+      </div>
+      <div class="col-md-4e ">
+        <button class="btn btn-sm btn-danger" id="delete-button" data-id="{{shirtOrder.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
 

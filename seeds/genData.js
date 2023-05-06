@@ -1,4 +1,7 @@
-// I am not sure of the proper procedures for implementing faker. I'd like us to talk to Moses on Monday to go over what I did and whether this is acceptable. There is most certainly a better way to do this, but time is ticking.   
+// I am not sure of the proper procedures for implementing faker. I'd like us to talk to Moses on Monday to go over what I did and whether this is acceptable. There is most certainly a better way to do this, but time is ticking. 
+
+// A second observation... Right now we are attaching the address, city, state, etc... onto the SHIRT ORDER. This means that we are generating a new pretend address for each user every time they make an order. This is confusing and only makes sense if we assume that a user moves after every shirt order. :-) Not likely. It might make more sense to move the address, city, state, etc... to the user model and to then pull that in for the shirt orders.  
+
 const { faker } = require('@faker-js/faker');
 const fs = require('fs')
 
