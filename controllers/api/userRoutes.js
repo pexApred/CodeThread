@@ -66,11 +66,13 @@ router.post("/logout", (req, res) => {
 router.post("/signup", async (req, res) => {
   try {
     const addUser = new User();
-    addUser.username = req.body.username;
+    addUser.name = req.body.name;
     addUser.email = req.body.email;
     addUser.password = req.body.password;
 
     const userData = await addUser.save();
+
+    console.log(userData)
 
     req.session.save(() => {
       req.session.user_id = userData.id;
