@@ -1,17 +1,24 @@
 <div>
     <div class="cohort-shirt col-md-5">
-        <h2 class="shirt-title">Order {{shirt.cohort_name}}</h2>
-        <a href="{{shirt.handlebars}}" img="{{shirt.cohort_shirt}}" alt="Graphic of {{shirt.cohort_name}}""></a>
+        <h2 class="shirt-title">Create Your Cohort Shirt {{shirt.cohort_name}}</h2>
+        <a href="{{shirt.handlebars}}" img="{{shirt.cohort_shirt}}" alt="Graphic of {{shirt.cohort_name}}"></a>
         <br>
-        <h3>Size</h3>
-        <p class="shirt-size">XS</p><label><input type="radio" name="mode" value="auto">Auto</label>
-        <p class="shirt-size">S</p><label><input type="radio" name="mode" value="auto">Auto</label>
-        <p class="shirt-size">M</p><label><input type="radio" name="mode" value="auto">Auto</label>
-        <p class="shirt-size">L</p><label><input type="radio" name="mode" value="auto">Auto</label>
-        <p class="shirt-size">XL</p><label><input type="radio" name="mode" value="auto">Auto</label>
-        <p class="shirt-size">XXL</p><label><input type="radio" name="mode" value="auto">Auto</label>
+        <h3>Image of Cohort Shirt</h3>
+        <h3>Choose Your Size</h3>
+        <br>
+        <p class="shirt-size"><label><input type="radio" name="mode" value="auto"> XS</p></label>
+        <p class="shirt-size"><label><input type="radio" name="mode" value="auto"> S</p></label>
+        <p class="shirt-size"><label><input type="radio" name="mode" value="auto"> M</p></label>
+        <p class="shirt-size"><label><input type="radio" name="mode" value="auto"> L</p></label>
+        <p class="shirt-size"><label><input type="radio" name="mode" value="auto"> XL</p></label>
+        <p class="shirt-size"><label><input type="radio" name="mode" value="auto"> XXL</p></label>
+        <br>
+        <h3>Choose Your Color</h3>
+        <br>
+        <p class="color" style="color: cornflowerblue;"><label><input type="radio" name="mode" value="auto"> Blue</p></label>
     </div>
     <div>
+      <h3>Delivery Address</h3>
         <form class="form login-form">
       <div class="form-group">
         <label for="address">Street</label>
@@ -34,7 +41,7 @@
         <input class="form-input" type="text" id="zip" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Add to Cart</button>
+        <button href="/SHIRTORDER"class="btn btn-primary" type="submit">Add to Cart</button>
       </div>
     </form>
   </div>
