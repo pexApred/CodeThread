@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,94 +11,96 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/jass.css" />
-  <title>Codethread</title>
+  <title>codeThread</title>
 </head>
 
+
 <body>
+
+
 
 
   <nav class="navbar navbar-expand-lg custom-navbar navbar-dark">
     <div class="container-fluid">
       {{!-- The CodeThread homepage is demarcated by the '/' route. --}}
-      <a class="navbar-brand" href="/">CodeThread</a>
-
-      <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar"
-          aria-controls="navbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-     
-        <div class="collapse navbar-collapse" id="navbar">
-          <div class="navbar-nav ms-auto">
-            <a class="nav-item nav-link" href="/">Shop</a>
-            <a class="nav-item nav-link" href="/profile">Profile</a>
-            <a class="nav-item nav-link" href="/shirtorder">Cart</a>
-          </div>
+      <a class="navbar-brand" href="/">codeThread</a>
 
 
-  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav ms-auto">
+
+
+          <a class="nav-item nav-link" href="/">Shop</a>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+          <a class="nav-item nav-link" href="/profile">Profile</a>
+          <a class="nav-item nav-link" href="/shirtorder">Cart</a>
+          <a class="no-button" id="logout">logout</a>
+
+
+          {{else}}
+          <a class="nav-item nav-link" href="/login">Log In</a>
+
+
+
+
+          {{/if}}
+
+
 
         </div>
       </div>
-    </nav>
-
-    <section class="py-5 hero">
-      <div class="container">
-        <h1>Welcome to Codethread</h1>
-        <p class="lead">
-        Congratulations, Bootcamp Graduate! You're ready to code in style! Log in to place your oder today!
-        </p>
-
-
-
-      <!-- Conditionally render login or logout links -->
-      {{#if logged_in}}
-    
-            <a class="nav-item nav-link" href="/">Shop</a>
-            <a class="nav-item nav-link" href="/profile">Profile</a>
-            <a class="nav-item nav-link" href="/shirtorder">Cart</a>
-            <a class="no-button" id="logout">logout</a>
-
-      {{else}}
-      <a class="nav-item nav-link" href="/login">Log In</a>
-      {{/if}}
-
-      </li>
-
-      </ul>
     </div>
   </nav>
-  </header>
-  <main class="container container-fluid mt-5">
-    <!-- Render the sub layout -->
-    {{!-- The syntax per handlebars for this part is {{{ body }}} --}}
-    {{{ body }}}
-  </main>
-  </div>
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+
+
+  <section class="py-5 hero">
+    <div class="container">
+      <h1>Welcome to codeThread</h1>
+      <p class="lead">
+        Congratulations, Bootcamp Graduate! You're ready to code in style! Log in to place your oder today!
+      </p>
+
+
+      </header>
+      <main class="container container-fluid mt-5">
+        <!-- Render the sub layout -->
+        {{!-- The syntax per handlebars for this part is {{{ body }}} --}}
+        {{{ body }}}
+      </main>
+    </div>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+
+
+    {{/if}}
 
 
 
 
-  <footer>
-    {{!-- The footer returns to the CodeThread homepage which is demarcated via the '/' --}}
- <button type="button" class="btn btn-link">Contact the Team</button>
-  </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+
+
+    <footer>
+      {{!-- The footer returns to the CodeThread homepage which is demarcated via the '/' --}}
+      <button type="button" class="btn btn-link">Contact the Team</button>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
 </body>
+
+
 
 
 </html>
