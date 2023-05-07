@@ -12,15 +12,17 @@ const shirtFormHandler = async (event) => {
     console.log(size, color)
 
     if (color && size && city && address && state && zip) {
-        const response = await fetch('/api/cart', {
+        const response = await fetch('/api/shirtOrder', {
             method: 'POST',
-            body: JSON.stringify({color, size, city, address, state, zip, apt}),
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify({color, size, city, address, state, zip, apt}),
+
         });
         if (response.ok) {
-            document.location.replace('/cart')
+            // Changed '/cart' to '/shirtOrder/:id'
+            document.location.replace('/shirtOrder/:id')
         } else {
             alert('failed to create post!')
         }
