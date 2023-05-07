@@ -13,38 +13,52 @@
       <p class="shirt-size"><label><input type="radio" name="mode" value="L"> L</p></label>
       <p class="shirt-size"><label><input type="radio" name="mode" value="XL"> XL</p></label>
       <p class="shirt-size"><label><input type="radio" name="mode" value="XXL"> XXL</p></label>
-    <br>
-    <h3>Choose Your Color</h3>
-    <br>
-    <p class="color" style="color: cornflowerblue;"><label><input type="radio" name="color-selection" value="Blue"> Blue</p>
-    </label>
+      <br>
+      <h3>Choose Your Color</h3>
+      <br>
+      <p class="color" style="color: cornflowerblue;"><label><input type="radio" name="color-selection" value="Blue">
+          Blue</p>
+      </label>
   </div>
   <div>
     <h3>Delivery Address</h3>
-      <div class="form-group">
-        <label for="address">Street</label>
-        <input class="form-input" type="text" id="address" />
-      </div>
-      <div class="form-group">
-        <label for="address">City:</label>
-        <input class="form-input" type="text" id="city" />
-      </div>
-      <div class="form-group">
-        <label for="address">State:</label>
-        <input class="form-input" type="text" id="state" />
-      </div>
-      <div class="form-group">
-        <label for="address">Apt:</label>
-        <input class="form-input" type="text" id="apt" />
-      </div>
-      <div class="form-group">
-        <label for="address">Zip Code:</label>
-        <input class="form-input" type="text" id="zip" />
-      </div>
-      <div class="form-group">
-        <button href="/shirtorder{{shirtorder.id}}" class="btn btn-primary" type="submit">Add to Cart</button>
-      </div>
+    <div class="form-group">
+      <label for="address">Street</label>
+      <input class="form-input" type="text" id="address" />
+    </div>
+    <div class="form-group">
+      <label for="address">City:</label>
+      <input class="form-input" type="text" id="city" />
+    </div>
+    <div class="form-group">
+      <label for="address">State:</label>
+      <input class="form-input" type="text" id="state" />
+    </div>
+    <div class="form-group">
+      <label for="address">Apt:</label>
+      <input class="form-input" type="text" id="apt" />
+    </div>
+    <div class="form-group">
+      <label for="address">Zip Code:</label>
+      <input class="form-input" type="text" id="zip" />
+    </div>
+    <div class="form-group">
+      <button href="/shirtorder{{shirtorder.id}}" class="btn btn-primary" type="submit">Add to Cart</button>
+    </div>
     </form>
   </div>
 
-  <script src="/js/shirtform.js"></script>
+
+    {{#each shirtOrder}}
+    <div class="row mb-2 cart-order">
+      <div class="col-md-8">
+        <h4><a href="/shirtOrder/{{shirtOrder.id}}"></a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" orderData-id="{{project.id}}">Add to Cart</button>
+      </div>
+    </div>
+    {{/each}}
+
+
+<script src="/js/shirtform.js"></script>
