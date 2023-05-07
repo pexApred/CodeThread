@@ -37,13 +37,14 @@
               <a class="nav-link" href="/profile">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="/shirtorder">Cart</a>
+              <a class="nav-link" href="/shirtorder">Cart</a>
             </li>
             <li>
 
               <!-- Conditionally render login or logout links -->
               {{#if logged_in}}
-              <a class="no-button" id="logout">logout</a>
+              {{!-- <a class="no-button" id="logout">logout</a> --}}
+              <li><a href="/logout">Logout</a></li>
               {{else}}
               <a href="/login">login</a>
               {{/if}}
