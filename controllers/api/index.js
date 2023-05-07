@@ -7,6 +7,7 @@ const cartRoutes = require('./cartRoutes');
 // TODO: Add 'router.use' for all /api routes
 router.use('/users', userRoutes);
 router.use('/shirts', shirtRoutes);
-router.use('/cart', cartRoutes)
+// Changed '/cart' to '/shirtOrder'
+router.use('/shirtOrder', cartRoutes)
 
 module.exports = router;

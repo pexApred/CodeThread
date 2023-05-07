@@ -68,26 +68,52 @@ router.get('/shirt/:id', async (req, res) => {
 });
 
 // Routes the user to a page specific to a single shirt order. Have to be logged in to access route. 
-router.get('/cart/:id', withAuth, async (req, res) => {
+// Changed '/cart/:id' to '/shirtOrder/:id'
+router.get('/shirtOrder/:id', withAuth, async (req, res) => {
   try {
-    // Get specific order data
     const shirtOrderData = await ShirtOrder.findByPk(req.params.id, {
-      include: [{ model: User }, { model: Shirt }]
-  });
-
-    const shirtOrder = shirtOrderData.get({ plain: true });
-
-    console.log(shirtOrder)
-
-    res.render('cart', {
-      ...shirtOrder,
-      logged_in: req.session.logged_in
+      include: [
+        {
+          model: Shirt,
+          attributes: ['id', 'price', 'cohort_name']
+        },
+        {
+          model: User,
+          attributes: ['id', 'name', 'email',]
+        }
+      ]
     });
+    if (!shirtOrderData) {
+      res.status(404).json({ message: 'No shirtOrder with this id!' });
+      return;
+    }
+    res.render('cart', { logged_in: req.session.logged_in });
+    res.status(200).json(shirtOrderData);
   } catch (err) {
-    console.log("Error",err)
     res.status(500).json(err);
   }
 });
+
+// TODO:Get specific order data
+
+// router.get('/shirtOrder/:id', withAuth, async (req, res) => {
+//   try {
+//     // Get specific order data
+//     const shirtOrderData = await ShirtOrder.findByPk(req.params.id, {
+//       include: [{ model: User }, { model: Shirt }]
+//   });
+
+//     console.log(shirtOrder)
+
+//     res.render('cart', {
+//       ...shirtOrder,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     console.log("Error",err)
+//     res.status(500).json(err);
+//   }
+// });
 
 // Routes user to their profile page where they can view their orders and information
 router.get('/profile', withAuth, async (req, res) => {
