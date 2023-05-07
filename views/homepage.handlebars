@@ -1,15 +1,28 @@
-<div class="col-mb-4 home">
-   
-    {{#each shirts as |shirt| }}
+feature/views-main.handlebars
+<div class="col-md-10 home">
+  <div class="col-md-10 header">
+
+    <h1>Welcome to codeThread</h1>
+    <p class="lead">
+      Congratulations, Bootcamp Graduate! You're ready to code in style. Log in
+      to place your oder today!
+    </p>
+    <br />
+    <h1>Shop</h1>
+
+  </div>
+  {{#each shirts as |shirt|}}
     <div class="cohort-shirt col-md-5">
-        <h2 class="shirt-title">{{shirt.cohort_name}}</h2>
-        <h4 class="shirt-price">${{shirt.price}}</h4>
-        <a href="/shirt/{{id}}">
-            <img src="https://dailymockup.com/wp-content/uploads/edd/2019/03/free-t-shirt-mockup-psd-template.jpg"
-                alt="Graphic of {{shirt.cohort_name}}"></a>
+      <h3 class="shirt-title">{{shirt.cohort_name}}</h3>
+      <h4 class="shirt-price">${{shirt.price}}</h4>
+      <a href="/shirt/{{id}}" style="padding-left: 0px;  padding-right: 0px;">
+        <img
+          src="https://dailymockup.com/wp-content/uploads/edd/2019/03/free-t-shirt-mockup-psd-template.jpg"
+          alt="Graphic of {{shirt.cohort_name}}"
+        /></a>
     </div>
     <div class="form-group">
-        <a href="/shirt/{{id}}" class="btn btn-primary" type="submit">View Shirt</a>
+      <a href="/shirt/{{id}}" class="btn btn-primary" type="submit">View Shirt</a>
     </div>
-    {{/each}}
+  {{/each}}
 </div>
