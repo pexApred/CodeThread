@@ -21,26 +21,27 @@
       {{!-- The CodeThread homepage is demarcated by the '/' route. --}}
       <a class="navbar-brand" href="/">codeThread</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar">
-        <div class="navbar-nav ms-auto">
+      <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+     
+        <div class="collapse navbar-collapse" id="navbar">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-item nav-link" href="/">Shop</a>
+            <a class="nav-item nav-link" href="/profile">Profile</a>
+            <a class="nav-item nav-link" href="/shirtorder">Cart</a>
+          </div>
 
-          <a class="nav-item nav-link" href="/">Shop</a>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-          <a class="nav-item nav-link" href="/profile">Profile</a>
-          <a class="nav-item nav-link" href="/shirtorder">Cart</a>
-          <a class="no-button" id="logout">logout</a>
 
-          {{else}}
-          <a class="nav-item nav-link" href="/login">Log In</a>
-
-
-          {{/if}}
-          
+  
 
         </div>
       </div>

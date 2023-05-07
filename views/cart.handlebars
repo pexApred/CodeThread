@@ -1,4 +1,5 @@
-{{!-- if empty display "Cart Empty" --}}
+<p>Hello World</p>
+{{!-- if empty display "Cart Empty"
 <h1>My Cart</h1>
 
   {{#if projects.length}}
@@ -7,13 +8,13 @@
     <div class="col-mb-4 home">
     {{#each shirts as |shirt| }}
     <div class="cohort-shirt col-md-5">
-        <h2 class="shirt-title">{{cohort.name}}</h2>
-        <a href={{shirt.handlebars}} img={{cohort.shirt}} alt="Graphic of "{{cohort.name}}></a>
+        <h2 class="shirt-title">{{cohort_name}}</h2>
+        <a href="{{shirt.handlebars}}" img="{{cohort_shirt}}" alt="Graphic of {{cohort_name}}"></a>
         <p class="shirt-size">Size: {{shirt.size}}</p>
         <br>
         <p class="shirt-color">Color: {{shirt.color}}</p>
         <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{shirt.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{shirt_order}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -22,4 +23,4 @@
   {{/if}}
 </div>
 
-<script src="./js/cart.js"></script>
+<script src="./js/cart.js"></script> --}}
