@@ -68,7 +68,7 @@ router.get('/shirt/:id', async (req, res) => {
 });
 
 // Routes the user to a page specific to a single shirt order. Have to be logged in to access route. 
-router.get('/orders/:id', withAuth, async (req, res) => {
+router.get('/cart/:id', withAuth, async (req, res) => {
   try {
     // Get specific order data
     const shirtOrderData = await ShirtOrder.findByPk(req.params.id, {
@@ -79,7 +79,7 @@ router.get('/orders/:id', withAuth, async (req, res) => {
 
     console.log(shirtOrder)
 
-    res.render('shirtorder', {
+    res.render('cart', {
       ...shirtOrder,
       logged_in: req.session.logged_in
     });
