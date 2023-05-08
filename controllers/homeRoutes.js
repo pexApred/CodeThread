@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     const shirts = shirtData.map((shirt) => shirt.get({ plain: true })); 
     res.render('homepage', {
       shirts,
+      logged_in: req.session.logged_in,
     });
     console.log(shirts);
   } catch (err) {
@@ -42,13 +43,23 @@ router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
     return;
-  }
-
+  } else
   res.render('login');
 });
 
+// 
+router.get('/logout', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+  req.session.destroy(() => {
+  res.render('/');
+  })
+});
+
 // Routes the user to a page specific to a single shirt. 
-router.get('/shirt/:id', async (req, res) => {
+router.get('/shirt/:id', withAuth, async (req, res) => {
   try {
     // Get specific shirt data
     const shirtData = await Shirt.findByPk(req.params.id);
@@ -69,9 +80,12 @@ router.get('/shirt/:id', async (req, res) => {
 
 // Routes the user to a page specific to a single shirt order. Have to be logged in to access route. 
 // Changed '/cart/:id' to '/shirtOrder/:id'
-router.get('/shirtOrder/:id', withAuth, async (req, res) => {
+router.get('/shirtOrder/:order_number', withAuth, async (req, res) => {
   try {
-    const shirtOrderData = await ShirtOrder.findByPk(req.params.id, {
+    const shirtOrderData = await ShirtOrder.findAll({
+      where: {
+        order_number: req.params.order_number,
+      },
       include: [
         {
           model: Shirt,
@@ -87,8 +101,9 @@ router.get('/shirtOrder/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No shirtOrder with this id!' });
       return;
     }
-    res.render('cart', { logged_in: req.session.logged_in });
-    res.status(200).json(shirtOrderData);
+    console.log(shirtOrderData[0]);
+    res.render('cart', { logged_in: req.session.logged_in, shirtOrder: shirtOrderData[0].dataValues });
+    // res.status(200).json(shirtOrderData);
   } catch (err) {
     res.status(500).json(err);
   }

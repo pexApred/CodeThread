@@ -1,26 +1,30 @@
-<p>Hello World</p>
-{{!-- if empty display "Cart Empty"
-<h1>My Cart</h1>
-
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Items in your cart:</h3>
-    <div class="col-mb-4 home">
-    {{#each shirts as |shirt| }}
+<h1>Order Confirmation</h1>
+{{#if shirtOrder}}
+<div class="col-md-6 project-list">
+  <h2></h2>
+  <div class="col-mb-4 home">
+    {{!-- {{#each shirtOrder as |Order| }} --}}
     <div class="cohort-shirt col-md-5">
-        <h2 class="shirt-title">{{cohort_name}}</h2>
-        <a href="{{shirt.handlebars}}" img="{{cohort_shirt}}" alt="Graphic of {{cohort_name}}"></a>
-        <p class="shirt-size">Size: {{shirt.size}}</p>
-        <br>
-        <p class="shirt-color">Color: {{shirt.color}}</p>
-        <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{shirt_order}}">DELETE</button>
+      <h2 class="shirt-title">{{cohort_name}}</h2>
+      <a href="{{shirt.handlebars}}" img="{{cohort_shirt}}" alt="Graphic of {{cohort_name}}"></a>
+      <p class="shirt-size">Shirt Size: {{shirtOrder.size}}</p>
+      <p class="shirt-color">Shirt Color: {{shirtOrder.color}}</p>
+      {{#if shirtOrder.apt}}
+      <p class="address-input">Address: {{concat shirtOrder.address ", " shirtOrder.apt ", " shirtOrder.city ", "
+        shirtOrder.state ", " shirtOrder.zip }}</p>
+      {{else}}
+      <p class="address-input">Address: {{concat shirtOrder.address ", " shirtOrder.city ", " shirtOrder.state ", "
+        shirtOrder.zip }}</p>
+      {{/if}}
+      <p class="payment-selection">Payment Method: {{shirtOrder.payment}}</p>
+      <div class="col-md-4">
+        <button href="/profile" id="viewprofile" class="btn btn-primary" type="submit">View in Profile</button>
       </div>
     </div>
-    {{/each}}
-</div>
+    {{!-- {{/each}} --}}
   </div>
-  {{/if}}
+</div>
+{{/if}}
 </div>
 
-<script src="./js/cart.js"></script> --}}
+<script src="/js/confirmation.js"></script>

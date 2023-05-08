@@ -7,44 +7,63 @@
     <h3>Choose Your Size</h3>
     <br>
     <form class="form new-shirt-form">
-      <p class="shirt-size"><label><input type="radio" name="mode" value="XS"> XS</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="S"> S</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="M"> M</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="L"> L</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="XL"> XL</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="XXL"> XXL</p></label>
-    <br>
-    <h3>Choose Your Color</h3>
-    <br>
-    <p class="color" style="color: cornflowerblue;"><label><input type="radio" name="color-selection" value="Blue"> Blue</p>
-    </label>
-  </div>
-  <div>
-    <h3>Delivery Address</h3>
-      <div class="form-group">
-        <label for="address">Street</label>
-        <input class="form-input" type="text" id="address" />
-      </div>
-      <div class="form-group">
-        <label for="address">City:</label>
-        <input class="form-input" type="text" id="city" />
-      </div>
-      <div class="form-group">
-        <label for="address">State:</label>
-        <input class="form-input" type="text" id="state" />
-      </div>
-      <div class="form-group">
-        <label for="address">Apt:</label>
-        <input class="form-input" type="text" id="apt" />
-      </div>
-      <div class="form-group">
-        <label for="address">Zip Code:</label>
-        <input class="form-input" type="text" id="zip" />
-      </div>
-      <div class="form-group">
-        <button href="/shirtorder{{shirtorder.id}}" class="btn btn-primary" type="submit">Add to Cart</button>
+      <p class="shirt-size"><label><input type="radio" name="mode" value="X-Small"> X-Small</p></label>
+      <p class="shirt-size"><label><input type="radio" name="mode" value="Small"> Small</p></label>
+      <p class="shirt-size"><label><input type="radio" name="mode" value="Medium"> Medium</p></label>
+      <p class="shirt-size"><label><input type="radio" name="mode" value="Large"> Large</p></label>
+      <p class="shirt-size"><label><input type="radio" name="mode" value="X-Large"> X-Large</p></label>
+      <p class="shirt-size"><label><input type="radio" name="mode" value="XX-Large"> XX-Large</p></label>
+      <br>
+      <h3>Choose Your Color</h3>
+      <br>
+      <p class="color" style="color: black;"><label><input type="radio" name="color-selection" value="Black"> Black</p>
+      </label>
+      <p class="color" style="color: pink;"><label><input type="radio" name="color-selection" value="Pink"> Pink</p>
+      </label>
+      <p class="color" style="color: black;"><label><input type="radio" name="color-selection" value="White"> White</p>
+      </label>
+      <p class="color" style="color: cornflowerblue;"><label><input type="radio" name="color-selection" value=" Blue">
+          UNC Blue</p></label>
+      <div>
+        <h3>Delivery Address</h3>
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input class="form-input" type="text" id="address" />
+        </div>
+        <div class="form-group">
+          <label for="address">Apt:</label>
+          <input class="form-input" type="text" id="apt" />
+        </div>
+        <div class="form-group">
+          <label for="address">City:</label>
+          <input class="form-input" type="text" id="city" />
+        </div>
+        <div class="form-group">
+          <label for="address">State:</label>
+          <input class="form-input" type="text" id="state" />
+        </div>
+        <div class="form-group">
+          <label for="address">Zip Code:</label>
+          <input class="form-input" type="text" id="zip" />
+        </div>
+        <h3>Choose Payment Option</h3>
+        {{!-- <p class="payment"><label><input type="radio" name="payment" value="Venmo"> Venmo </p></label> --}}
+        <p class="payment"><label><input type="radio" name="payment" value="Paypal"> Paypal <i
+              class="fa-brands fa-cc-paypal"></i></p></label>
+        <p class="payment"><label><input type="radio" name="payment" value="Apple Pay"> Apple Pay <i
+              class="fa-brands fa-cc-apple-pay"></i></p></label>
+        <p class="payment"><label><input type="radio" name="payment" value="Mastercard"> Mastercard <i
+              class="fa-brands fa-cc-mastercard"></i></p></label>
+        <p class="payment"><label><input type="radio" name="payment" value="Visa"> Visa <i
+              class="fa-brands fa-cc-visa"></i></p></label>
+        <p class="payment"><label><input type="radio" name="payment" value="Discover"> Discover <i
+              class="fa-brands fa-cc-discover"></i></p></label>
+        <div class="form-group">
+          <button href="/shirtorder{{shirtorder.id}}" class="btn btn-primary" type="submit">Confirm Purchase</button>
+        </div>
       </div>
     </form>
   </div>
+</div>
 
-  <script src="/js/shirtform.js"></script>
+<script src="/js/shirtform.js"></script>

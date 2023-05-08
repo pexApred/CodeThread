@@ -13,7 +13,7 @@ Shirt.init(
       autoIncrement: true,
     },
     price: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(7, 2),
         allowNull: false,
         validate: {
           isDecimal: true
