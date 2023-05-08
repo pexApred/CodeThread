@@ -17,4 +17,13 @@ Handlebars.registerHelper('concat', function() {
   }
 
   return concatenatedString;
+
 });
+
+// TODO: Format date (for Profile page)
+module.exports = {
+  format_date: (date) => {
+    // Date displayed as MM/DD/YYYY
+    return date.toLocaleDateString();
+  },
+};
