@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,29 +14,26 @@
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg custom-navbar navbar-dark">
     <div class="container-fluid">
       {{!-- The CodeThread homepage is demarcated by the '/' route. --}}
-
       <a class="navbar-brand" href="/">codeThread</a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav ms-auto">
-
           <a class="nav-item nav-link" href="/">Shop</a>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
           <a class="nav-item nav-link" href="/profile">Profile</a>
           <a class="nav-item nav-link" href="/shirtorder">Cart</a>
           <a class="no-button" id="logout">logout</a>
+
           {{else}}
           <a class="nav-item nav-link" href="/login">Log In</a>
-         {{/if}}
+          {{/if}}
 
         </div>
       </div>
@@ -53,9 +49,8 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
-
-
   {{/if}}
+
 
   <footer>
     {{!-- The footer returns to the CodeThread homepage which is demarcated via the '/' --}}
