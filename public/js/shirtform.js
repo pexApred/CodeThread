@@ -21,8 +21,10 @@ const shirtFormHandler = async (event) => {
 
         });
         if (response.ok) {
+            const orderData = await response.json()
+            console.log("order data is here: ", orderData.order_number);
             // Changed '/cart' to '/shirtOrder/:id'
-            document.location.replace('/shirtOrder/:id')
+            document.location.replace(`/shirtOrder/${orderData.order_number}`)
         } else {
             alert('failed to create post!')
         }

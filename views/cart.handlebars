@@ -1,26 +1,25 @@
-<p>Hello World</p>
-{{!-- if empty display "Cart Empty"
+if empty display "Cart Empty"
 <h1>My Cart</h1>
 
-  {{#if projects.length}}
+  {{#if shirtOrder}}
   <div class="col-md-6 project-list">
     <h3>Items in your cart:</h3>
     <div class="col-mb-4 home">
-    {{#each shirts as |shirt| }}
+    {{!-- {{#each shirtOrder as |Order| }} --}}
     <div class="cohort-shirt col-md-5">
         <h2 class="shirt-title">{{cohort_name}}</h2>
         <a href="{{shirt.handlebars}}" img="{{cohort_shirt}}" alt="Graphic of {{cohort_name}}"></a>
-        <p class="shirt-size">Size: {{shirt.size}}</p>
+        <p class="shirt-size">Size: {{shirtOrder.size}}</p>
         <br>
-        <p class="shirt-color">Color: {{shirt.color}}</p>
+        <p class="shirt-color">Color: {{shirtOrder.color}}</p>
         <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{shirt_order}}">DELETE</button>
       </div>
     </div>
-    {{/each}}
+    {{!-- {{/each}} --}}
 </div>
   </div>
   {{/if}}
 </div>
-
-<script src="./js/cart.js"></script> --}}
+{{!-- 
+<script src="../public/js/cart.js"></script> --}}
