@@ -17,7 +17,11 @@
         /></a>
     </div>
     <div class="form-group">
+      {{!-- {{#if logged_in}} --}}
       <a href="/shirt/{{id}}" class="btn btn-primary" type="submit">View Shirt</a>
+      {{!-- {{else}}
+      <a href="/login" class="btn btn-primary" type="submit">View Shirt</a>
+      {{/if}} --}}
     </div>
   {{/each}}
 </div>

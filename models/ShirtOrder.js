@@ -50,6 +50,10 @@ ShirtOrder.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        payment: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         shirt_id: {
             type: DataTypes.INTEGER,
             references: {

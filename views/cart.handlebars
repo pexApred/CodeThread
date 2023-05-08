@@ -10,12 +10,13 @@
       <p class="shirt-size">Shirt Size: {{shirtOrder.size}}</p>
       <p class="shirt-color">Shirt Color: {{shirtOrder.color}}</p>
       {{#if shirtOrder.apt}}
-      <p class="shirt-color">Address: {{concat shirtOrder.address ", " shirtOrder.apt ", " shirtOrder.city ", "
+      <p class="address-input">Address: {{concat shirtOrder.address ", " shirtOrder.apt ", " shirtOrder.city ", "
         shirtOrder.state ", " shirtOrder.zip }}</p>
       {{else}}
-      <p class="shirt-color">Address: {{concat shirtOrder.address ", " shirtOrder.city ", " shirtOrder.state ", "
+      <p class="address-input">Address: {{concat shirtOrder.address ", " shirtOrder.city ", " shirtOrder.state ", "
         shirtOrder.zip }}</p>
       {{/if}}
+      <p class="payment-selection">Payment Method: {{shirtOrder.payment}}</p>
       <div class="col-md-4">
         <button href="/profile" id="viewprofile" class="btn btn-primary" type="submit">View in Profile</button>
       </div>
