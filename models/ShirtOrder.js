@@ -21,34 +21,24 @@ ShirtOrder.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
-          },
-        shirt_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'shirt',
-              key: 'id',
-            },
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'user',
-              key: 'id',
-            },
+        size: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         color: {
             type: DataTypes.STRING,
             allowNull: false,
-          },
-          size: {
-              type: DataTypes.STRING,
-              allowNull: false,
-          },
-          city: {
+        },
+        address: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        address: {
+        apt: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        city: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -60,10 +50,21 @@ ShirtOrder.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        apt: {
-            type: DataTypes.STRING,
-            allowNull: true,
+        shirt_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'shirt',
+                key: 'id',
+            },
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
+
     },
     {
         sequelize,
