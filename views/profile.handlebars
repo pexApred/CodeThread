@@ -7,30 +7,29 @@
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>My Profile</h3>
-    <p>Name: {{name}}</p>
-    <br>
-    <p>Email: {{email}}</p>
+    <p><b>Name:</b> {{name}}</p>
+    <p><b>Email:</b> {{email}}</p>
   </div>
-</div>
+  {{!-- Kenzie moved the closing </div> tag from line 14 to line 45 so that "My Shirt Orders" displays to the right side of the page on desktop view for a cleaner look. May need to adjust media queries slightly if you want the column to be wider at different screen sizes, but otherwise it looks fine if you wanna leave it too--}}
 
 {{!-- The if handlebars helper is used if the user has made a previous post --}}
   {{#if shirtOrders.length}}
   <div class="col-md-6 post-list">
-    <h3>Shirt Orders:</h3>
+    <h3>My Shirt Orders:</h3>
 {{!-- The each handlebars helper is used to iterate over a list of all shirt orders. --}}
     {{#each shirtOrders as |shirtOrder|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <ul>
-        <li><p>Order Number: {{shirtOrder.order_number}}</p></li>
-        <li><p>Date Created: {{shirtOrder.date_created}}</p></li>
-        <li><p>Color: {{shirtOrder.color}}</p></li>
-        <li><p>Size: {{shirtOrder.size}}</p></li>
-        <li><p>Address: {{shirtOrder.address}}</p></li>
-        <li><p>City: {{shirtOrder.city}}</p></li>
-        <li><p>State: {{shirtOrder.state}}</p></li>
-        <li><p>Zip: {{shirtOrder.zip}}</p></li>
-        <li><p>Apt: {{shirtOrder.apt}}</p></li></ul>
+        <li><p><b>Order Number:</b> {{shirtOrder.order_number}}</p></li>
+        <li><p><b>Date Created:</b> {{shirtOrder.date_created}}</p></li>
+        <li><p><b>Shirt Color:</b> {{shirtOrder.color}}</p></li>
+        <li><p><b>Shirt Size:</b> {{shirtOrder.size}}</p></li>
+        <li><p><b>Address:</b> {{shirtOrder.address}}</p></li>
+        <li><p><b>City:</b> {{shirtOrder.city}}</p></li>
+        <li><p><b>State:</b> {{shirtOrder.state}}</p></li>
+        <li><p><b>Zip:</b> {{shirtOrder.zip}}</p></li>
+        <li><p><b>Apt:</b> {{shirtOrder.apt}}</p></li></ul>
     <a href="/post/{{shirtOrder.id}}">{{shirtOrder.title}}</a></h4>
       </div>
       <div class="col-md-4e">
@@ -41,6 +40,8 @@
       </div>
     </div>
     {{/each}}
+  </div>
+  {{!-- Kenzie moved the closing </div> tag from line 13 to line 45 so that "My Shirt Orders" displays to the right side of the page on desktop view for a cleaner look. May need to adjust media queries slightly if you want the column to be wider at different screen sizes, but otherwise it looks fine if you wanna leave it too--}}
   </div>
   {{/if}}
 
