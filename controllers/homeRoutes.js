@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     const shirts = shirtData.map((shirt) => shirt.get({ plain: true })); 
     res.render('homepage', {
       shirts,
+      logged_in: req.session.logged_in,
     });
     console.log(shirts);
   } catch (err) {
@@ -69,9 +70,12 @@ router.get('/shirt/:id', async (req, res) => {
 
 // Routes the user to a page specific to a single shirt order. Have to be logged in to access route. 
 // Changed '/cart/:id' to '/shirtOrder/:id'
-router.get('/shirtOrder/:id', withAuth, async (req, res) => {
+router.get('/shirtOrder/:order_number', withAuth, async (req, res) => {
   try {
-    const shirtOrderData = await ShirtOrder.findByPk(req.params.id, {
+    const shirtOrderData = await ShirtOrder.findAll({
+      where: {
+        order_number: req.params.order_number,
+      },
       include: [
         {
           model: Shirt,
@@ -87,8 +91,9 @@ router.get('/shirtOrder/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No shirtOrder with this id!' });
       return;
     }
-    res.render('cart', { logged_in: req.session.logged_in });
-    res.status(200).json(shirtOrderData);
+    console.log(shirtOrderData);
+    res.render('cart', { logged_in: req.session.logged_in, shirtOrder: shirtOrderData[0].dataValues });
+    // res.status(200).json(shirtOrderData);
   } catch (err) {
     res.status(500).json(err);
   }
