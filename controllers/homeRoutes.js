@@ -59,7 +59,7 @@ router.get('/logout', (req, res) => {
 });
 
 // Routes the user to a page specific to a single shirt. 
-router.get('/shirt/:id', async (req, res) => {
+router.get('/shirt/:id', withAuth, async (req, res) => {
   try {
     // Get specific shirt data
     const shirtData = await Shirt.findByPk(req.params.id);
