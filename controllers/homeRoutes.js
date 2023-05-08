@@ -43,9 +43,19 @@ router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
     return;
-  }
-
+  } else
   res.render('login');
+});
+
+// 
+router.get('/logout', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+  req.session.destroy(() => {
+  res.render('/');
+  })
 });
 
 // Routes the user to a page specific to a single shirt. 
@@ -91,7 +101,7 @@ router.get('/shirtOrder/:order_number', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No shirtOrder with this id!' });
       return;
     }
-    console.log(shirtOrderData);
+    console.log(shirtOrderData[0]);
     res.render('cart', { logged_in: req.session.logged_in, shirtOrder: shirtOrderData[0].dataValues });
     // res.status(200).json(shirtOrderData);
   } catch (err) {
