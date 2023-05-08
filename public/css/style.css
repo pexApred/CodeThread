@@ -64,7 +64,7 @@
     background-color: var(--darkblue);
     margin-top: 20px;
     padding: 20px;
-    position: fixed;
+    position: static;
     bottom: 0px;
     left: 0px;
 }
