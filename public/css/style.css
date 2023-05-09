@@ -17,11 +17,11 @@
 
 .custom-navbar a {
   font-size: 1.5rem;
-  color: var(--lightseablue);
+  color: var(--uncblue);
 }
 
 .custom-navbar a:hover {
-  color: var(--uncblue);
+  color: var(--light);
 }
 
 .hero {
@@ -45,12 +45,12 @@ h3 {
 .custom-btn {
   background-color: var(--light);
   color: var(--blue);
-  margin: 1em;
+  margin: 2em;
 
 }
 
 .custom-btn:hover {
-  background-color: var(--darkblue);
+  background-color: var(--uncblue);
   color: var(--light);
 }
 
@@ -63,8 +63,9 @@ h3 {
 }
 
 .footer {
-  height: 50px;
+  height: 70px;
 
   background-color: var(--darkblue);
 
 }
+
