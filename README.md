@@ -75,9 +75,13 @@ THEN I am presented with a modal containing the Code Thread email
 
 ## Usage
 
-## *Visuals*
+![An image of the codeThread homepage.](./assets/images/codeThread-homepage.png)
+![An image of the codeThread shirt order form page that allows users to create their shirt.](./assets/images/codeThread-create-shirt.png)
+![An image that displays the user's shirt order confirmation.](./assets/images/codeThread-confirmation.png)
+![An image of the codeThread profile page, demonstrating a user example.](./assets/images/codeThread-profile.png)
 
-## *Technologies Used*
+
+## Technologies Used
 
 * [VS Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/en)
