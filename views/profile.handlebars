@@ -18,9 +18,10 @@ but otherwise it looks fine if you wanna leave it too--}}
 {{!-- The if handlebars helper is used if the user has made a previous post --}}
 {{#if shirtOrders.length}}
 <div class="col-md-6 post-list">
-  <h3>My Shirt Orders:</h3>
+
   {{!-- The each handlebars helper is used to iterate over a list of all shirt orders. --}}
-  {{#each shirtOrders as |shirtOrder|}}
+  {{#each shirtOrders as |shirtOrder|}}  
+  <h3>My Shirt Orders:</h3>
   <div class="row mb-2">
     <div class="col-md-8">
       <ul>
