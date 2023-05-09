@@ -75,8 +75,9 @@ THEN I am presented with a modal containing the Code Thread email
 
 ## Usage
 
+## *Visuals*
 
-## Technologies Used
+## *Technologies Used*
 
 * [VS Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/en)
