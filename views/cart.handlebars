@@ -1,22 +1,21 @@
 <h1>Order Confirmation</h1>
 {{#if shirtOrder}}
-<div class="col-md-6 project-list">
-  <h2></h2>
+{{!-- <div class="col-md-6 project-list"> --}}
   <div class="col-mb-4 home">
     {{!-- {{#each shirtOrder as |Order| }} --}}
     <div class="cohort-shirt col-md-5">
       <h2 class="shirt-title">{{cohort_name}}</h2>
       <a href="{{shirt.handlebars}}" img="{{cohort_shirt}}" alt="Graphic of {{cohort_name}}"></a>
-      <p class="shirt-size">Shirt Size: {{shirtOrder.size}}</p>
-      <p class="shirt-color">Shirt Color: {{shirtOrder.color}}</p>
+      <p class="shirt-size"><b>Shirt Size:</b> {{shirtOrder.size}}</p>
+      <p class="shirt-color"><b>Shirt Color:</b> {{shirtOrder.color}}</p>
       {{#if shirtOrder.apt}}
-      <p class="address-input">Address: {{concat shirtOrder.address ", " shirtOrder.apt ", " shirtOrder.city ", "
+      <p class="address-input"><b>Address:</b> {{concat shirtOrder.address ", " shirtOrder.apt ", " shirtOrder.city ", "
         shirtOrder.state ", " shirtOrder.zip }}</p>
       {{else}}
-      <p class="address-input">Address: {{concat shirtOrder.address ", " shirtOrder.city ", " shirtOrder.state ", "
+      <p class="address-input"><b>Address:</b> {{concat shirtOrder.address ", " shirtOrder.city ", " shirtOrder.state ", "
         shirtOrder.zip }}</p>
       {{/if}}
-      <p class="payment-selection">Payment Method: {{shirtOrder.payment}}</p>
+      <p class="payment-selection"><b>Payment Method:</b> {{shirtOrder.payment}}</p>
       <div class="col-md-4">
         <button href="/profile" id="viewprofile" class="btn btn-primary" type="submit">View in Profile</button>
       </div>
@@ -25,6 +24,6 @@
   </div>
 </div>
 {{/if}}
-</div>
+{{!-- </div> --}}
 
 <script src="/js/confirmation.js"></script>
