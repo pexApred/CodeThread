@@ -86,7 +86,6 @@ THEN I am presented with a modal containing the Code Thread email
 * [VS Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/en)
 * [Node Package Manager](https://www.npmjs.com/)
-* [Inquirer Package](https://www.npmjs.com/package/inquirer)
 * [UUID](https://www.npmjs.com/package/uuid)
 * [Express](https://expressjs.com/)
 * [Faker.js](https://www.npmjs.com/package/@faker-js/faker)
