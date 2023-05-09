@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Shirt, ShirtOrder } = require('../models');
 const withAuth = require('../utils/auth');
+
 // (Temporary code we used for testing to open a 'homepage' in browser)
 router.get('/', async (req, res) => {
   try {
@@ -22,14 +23,6 @@ router.get('/', async (req, res) => {
 router.get('/', withAuth, async (req, res) => {
   try {
     
-    
-    // const userData = await User.findAll({
-    //   attributes: { exclude: ['password'] },
-    //   order: [['name', 'ASC']],
-    // });
-
-    // const users = userData.map((project) => project.get({ plain: true }));
-
     res.render('profile', {
       users,
       logged_in: req.session.logged_in,
@@ -108,27 +101,6 @@ router.get('/shirtOrder/:order_number', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// TODO:Get specific order data
-
-// router.get('/shirtOrder/:id', withAuth, async (req, res) => {
-//   try {
-//     // Get specific order data
-//     const shirtOrderData = await ShirtOrder.findByPk(req.params.id, {
-//       include: [{ model: User }, { model: Shirt }]
-//   });
-
-//     console.log(shirtOrder)
-
-//     res.render('cart', {
-//       ...shirtOrder,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     console.log("Error",err)
-//     res.status(500).json(err);
-//   }
-// });
 
 // Routes user to their profile page where they can view their orders and information
 router.get('/profile', withAuth, async (req, res) => {

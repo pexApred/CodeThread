@@ -1,23 +1,6 @@
 // TODO: Import dependencies, including models
 const router = require("express").Router();
-const { Shirt, User, ShirtOrder } = require('../../models');
-const withAuth = require('../../utils/auth');
-
-// TODO: Create new user (POST method with 'create') --> "sign-up"
-// router.post("/", async (req, res) => {
-//   try {
-//     const userData = await User.create(req.body);
-
-//     req.session.save(() => {
-//       req.session.user_id = userData.id;
-//       req.session.logged_in = true;
-
-//       res.status(200).json(userData);
-//     });
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+const { User } = require('../../models');
 
 // TODO: User /login route (POST method with 'findOne') --> "sign-in"
 router.post("/login", async (req, res) => {
