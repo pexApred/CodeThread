@@ -3,7 +3,7 @@
 
 ## Application Links
 
-* GitHub Repository for Application: 
+* GitHub Repository for Application: https://github.com/pexApred/CodeThread
 
 * Heroku Deployed Application: 
 
@@ -74,6 +74,11 @@ THEN I am presented with a modal containing the Code Thread email
 
 
 ## Usage
+
+![An image of the codeThread homepage.](./assets/images/codeThread-homepage.png)
+![An image of the codeThread shirt order form page that allows users to create their shirt.](./assets/images/codeThread-create-shirt.png)
+![An image that displays the user's shirt order confirmation.](./assets/images/codeThread-confirmation.png)
+![An image of the codeThread profile page, demonstrating a user example.](./assets/images/codeThread-profile.png)
 
 
 ## Technologies Used
