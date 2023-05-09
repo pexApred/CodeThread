@@ -10,59 +10,52 @@
     <p><b>Name:</b> {{name}}</p>
     <p><b>Email:</b> {{email}}</p>
   </div>
-  {{!-- Kenzie moved the closing
-</div> tag from line 14 to line 45 so that "My Shirt Orders" displays to the right side of the page on desktop view for
-a cleaner look. May need to adjust media queries slightly if you want the column to be wider at different screen sizes,
-but otherwise it looks fine if you wanna leave it too--}}
 
-{{!-- The if handlebars helper is used if the user has made a previous post --}}
-{{#if shirtOrders.length}}
-<div class="col-md-6 post-list">
+  {{!-- The if handlebars helper is used if the user has made a previous post --}}
+  {{#if shirtOrders.length}}
+  <div class="col-md-6 post-list">
 
-  {{!-- The each handlebars helper is used to iterate over a list of all shirt orders. --}}
-  {{#each shirtOrders as |shirtOrder|}}  
-  <h3>My Shirt Order:</h3>
-  <div class="row mb-2">
-    <div class="col-md-8">
-      <ul>
-        <li>
-          <p><b>Order Number:</b> {{shirtOrder.order_number}}</p>
-        </li>
-        <li>
-          <p><b>Date Created:</b> {{format_date shirtOrder.date_created}}</p>
-        </li>
-        <li>
-          <p><b>Shirt Color:</b> {{shirtOrder.color}}</p>
-        </li>
-        <li>
-          <p><b>Shirt Size:</b> {{shirtOrder.size}}</p>
-        </li>
-        <li>
-          <p><b>Address:</b> {{shirtOrder.address}}</p>
-        </li>
-        <li>
-          <p><b>Apt:</b> {{shirtOrder.apt}}</p>
-        </li>
-        <li>
-          <p><b>City:</b> {{shirtOrder.city}}</p>
-        </li>
-        <li>
-          <p><b>State:</b> {{shirtOrder.state}}</p>
-        </li>
-        <li>
-          <p><b>Zip:</b> {{shirtOrder.zip}}</p>
-        </li>
-        <li>
-          <p><b>Payment:</b> {{shirtOrder.payment}}</p>
-        </li>
-      </ul>
-      <a href="/post/{{shirtOrder.id}}">{{shirtOrder.title}}</a></h4>
+    {{!-- The each handlebars helper is used to iterate over a list of all shirt orders. --}}
+    {{#each shirtOrders as |shirtOrder|}}
+    <h3>My Shirt Order:</h3>
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <ul>
+          <li>
+            <p><b>Order Number:</b> {{shirtOrder.order_number}}</p>
+          </li>
+          <li>
+            <p><b>Date Created:</b> {{format_date shirtOrder.date_created}}</p>
+          </li>
+          <li>
+            <p><b>Shirt Size:</b> {{shirtOrder.size}}</p>
+          </li>
+          <li>
+            <p><b>Shirt Color:</b> {{shirtOrder.color}}</p>
+          </li>
+          <li>
+            <p><b>Address:</b> {{shirtOrder.address}}</p>
+          </li>
+          <li>
+            <p><b>Apt:</b> {{shirtOrder.apt}}</p>
+          </li>
+          <li>
+            <p><b>City:</b> {{shirtOrder.city}}</p>
+          </li>
+          <li>
+            <p><b>State:</b> {{shirtOrder.state}}</p>
+          </li>
+          <li>
+            <p><b>Zip:</b> {{shirtOrder.zip}}</p>
+          </li>
+          <li>
+            <p><b>Payment:</b> {{shirtOrder.payment}}</p>
+          </li>
+        </ul>
+        <a href="/post/{{shirtOrder.id}}">{{shirtOrder.title}}</a></h4>
+      </div>
     </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
-{{!-- Kenzie moved the closing </div> tag from line 13 to line 45 so that "My Shirt Orders" displays to the right side
-of the page on desktop view for a cleaner look. May need to adjust media queries slightly if you want the column to be
-wider at different screen sizes, but otherwise it looks fine if you wanna leave it too--}}
 </div>
 {{/if}}
