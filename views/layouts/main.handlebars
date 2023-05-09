@@ -27,13 +27,13 @@
           <div class="navbar-nav ms-auto">
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
+            <a class="nav-item nav-link" href="/">Shop</a>
             <a class="nav-item nav-link" href="/profile">Profile</a>
             <a class="nav-item nav-link" id="logout">logout</a>
-            <a class="nav-item nav-link" href="/">Shop</a>
             {{else}}
+            <a class="nav-item nav-link" href="/">Shop</a>
             <a class="nav-item nav-link" href="/profile">Profile</a>
             <a class="nav-item nav-link" href="/login">Log In</a>
-            <a class="nav-item nav-link" href="/">Shop</a>
             {{/if}}
 
           </div>
@@ -57,6 +57,7 @@
   <footer class="footer">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
       Contact the Team
     </button>
 
