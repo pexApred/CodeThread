@@ -1,10 +1,8 @@
 # Code Thread
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
 ## Application Links
+
 * GitHub Repository for Application: 
 
 * Heroku Deployed Application: 
@@ -13,10 +11,24 @@
 
 ## Description
 
+### *The Task*
+
+For Project #2, we were tasked to utilize the skills and knowledge we've gained through the Coding Bootcamp and work in a group to create a real-world full-stack web application from scratch.
+
+### *Our Project*
+Show off your cohort pride with custom-designed apparel from us! With our unique, stylish designs and comfortable materials, we provide the perfect way to express yourself and commemorate your hard-earned accomplishments. Plus, we use eco-friendly materials, so you can feel good about your purchase. So don’t wait – join thousands of other graduates and show off your cohort pride in style today!
+
 ---
 
 ## Table of Contents
 
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Credits](#credits)
+- [License](#license)
+- [Badges](#badges)
 ---
 
 ## User Story
@@ -73,7 +85,7 @@ THEN I am presented with a modal containing the Code Thread email
 * [Handlebars.js](https://www.npmjs.com/package/handlebars)
 * [Heroku](https://www.heroku.com/)
 
----
+
 
 ## Credits
 
@@ -81,6 +93,12 @@ Jasmina Otero, Daniel Bowen, MacKenzie Wentworth, Erynn Affeldt, Emmanuel Lakis
 
 
 ## License
-This project is covered under the [MIT License](./LICENSE). For more details, please click the license icon at the top of the page.
+This project is covered under the [MIT License](./LICENSE). For more details, please click the license icon below under 'Badges'.
+
+---
+
+## Badges
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
