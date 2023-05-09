@@ -16,7 +16,12 @@
 For Project #2, we were tasked to utilize the skills and knowledge we've gained through the Coding Bootcamp and work in a group to create a real-world full-stack web application from scratch.
 
 ### *Our Project*
+A website where Bootcamp graduates can create an account to purchase their own cohort t-shirt by selecting a cohort, shirt size, and shirt color.
+
 Show off your cohort pride with custom-designed apparel from us! With our unique, stylish designs and comfortable materials, we provide the perfect way to express yourself and commemorate your hard-earned accomplishments. Plus, we use eco-friendly materials, so you can feel good about your purchase. So don’t wait – join thousands of other graduates and show off your cohort pride in style today!
+
+### *Motivation for Development*
+Our motivation was our awesome cohort and wanting to create a product where we can express all of our accomplishments and cohort pride!
 
 ---
 
