@@ -3,7 +3,7 @@
 
 ## Application Links
 
-* GitHub Repository for Application: 
+* GitHub Repository for Application: https://github.com/pexApred/CodeThread
 
 * Heroku Deployed Application: 
 
