@@ -1016,7 +1016,9 @@
   .btn.btn-primary {
     background-color: #2d3e50;
     color: #d9e9e8;
-  }
+    cursor: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="25" width="25"><text y="25" font-size="32">🦄</text><path d="M0,2 L0,0 L2,0" fill="red" /></svg>'), auto;
+}
+
   
   .btn.btn-primary:hover {
     background-color: #57779a;
