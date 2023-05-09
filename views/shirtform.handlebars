@@ -3,27 +3,28 @@
     <h2 class="shirt-title">Create Your Cohort Shirt {{shirt.cohort_name}}</h2>
     <a href="{{shirt.handlebars}}" img="{{shirt.cohort_shirt}}" alt="Graphic of {{shirt.cohort_name}}"></a>
     <br>
-    <img src="./public/images/codeThread-Shirt-blue.png">
+    <img src="/images/codeThread-Shirt-blue.png">
     <h3>Choose Your Size</h3>
     <br>
     <form class="form new-shirt-form">
-      <p class="shirt-size"><label><input type="radio" name="mode" value="X-Small"> X-Small</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="Small"> Small</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="Medium"> Medium</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="Large"> Large</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="X-Large"> X-Large</p></label>
-      <p class="shirt-size"><label><input type="radio" name="mode" value="XX-Large"> XX-Large</p></label>
+      <a class="shirt-size"><label><input type="radio" name="mode" value="X-Small"> X-Small</a></label>
+      <a class="shirt-size"><label><input type="radio" name="mode" value="Small"> Small</a></label>
+      <a class="shirt-size"><label><input type="radio" name="mode" value="Medium"> Medium</a></label>
+      <a class="shirt-size"><label><input type="radio" name="mode" value="Large"> Large</a></label>
+      <a class="shirt-size"><label><input type="radio" name="mode" value="X-Large"> X-Large</a></label>
+      <a class="shirt-size"><label><input type="radio" name="mode" value="XX-Large"> XX-Large</a></label>
       <br>
       <h3>Choose Your Color</h3>
       <br>
-      <p class="color" style="color: black;"><label><input type="radio" name="color-selection" value="Black"> Black</p>
+      <a class="color"><label><input type="radio" name="color-selection" value="Black"> Black</a>
       </label>
-      <p class="color" style="color: pink;"><label><input type="radio" name="color-selection" value="Pink"> Pink</p>
+      <a class="color"><label><input type="radio" name="color-selection" value="Pink"> Pink</a>
       </label>
-      <p class="color" style="color: black;"><label><input type="radio" name="color-selection" value="White"> White</p>
+      <a class="color"><label><input type="radio" name="color-selection" value="White"> White</a>
       </label>
-      <p class="color" style="color: cornflowerblue;"><label><input type="radio" name="color-selection" value=" Blue">
-          UNC Blue</p></label>
+      <a class="color"><label><input type="radio" name="color-selection" value=" Blue">
+          UNC Blue</a></label>
+      <br>
       <div>
         <h3>Delivery Address</h3>
         <div class="form-group">
@@ -46,6 +47,7 @@
           <label for="address">Zip Code:</label>
           <input class="form-input" type="text" id="zip" />
         </div>
+        <br>
         <h3>Choose Payment Option</h3>
         {{!-- <p class="payment"><label><input type="radio" name="payment" value="Venmo"> Venmo </p></label> --}}
         <p class="payment"><label><input type="radio" name="payment" value="Paypal"> Paypal <i
