@@ -5,7 +5,7 @@
 
 * GitHub Repository for Application: https://github.com/pexApred/CodeThread
 
-* Heroku Deployed Application: 
+* Heroku Deployed Application: https://pacific-inlet-31648.herokuapp.com/
 
 ---
 
