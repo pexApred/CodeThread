@@ -92,7 +92,10 @@ THEN I am presented with a modal containing the Code Thread email
 * [MySQL](https://www.mysql.com/)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 * [Handlebars.js](https://www.npmjs.com/package/handlebars)
+* [Bootstrap Framework](https://getbootstrap.com/)
+* [Font Awesome](https://fontawesome.com/)
 * [Heroku](https://www.heroku.com/)
+
 
 
 
